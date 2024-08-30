@@ -16,6 +16,10 @@ spec:
         values: |
           preUpgradeChecker:
             jobEnabled: false
+          ingress:
+            enabled: true
+            host: longhorn.homelab.t-inagaki.net
+
   destination:
     server: https://kubernetes.default.svc
     namespace: longhorn-system
