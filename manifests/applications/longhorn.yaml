@@ -19,6 +19,7 @@ spec:
           ingress:
             enabled: true
             host: longhorn.homelab.t-inagaki.net
+            ingressClassName: nginx
 
   destination:
     server: https://kubernetes.default.svc
