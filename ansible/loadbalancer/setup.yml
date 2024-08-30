@@ -5,3 +5,4 @@
   roles:
     - haproxy
     - configure_haproxy
+    - configure_firewall

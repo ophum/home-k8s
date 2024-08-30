@@ -1,0 +1,13 @@
+---
+- name: Allow port 8080, 8443
+  community.general.ufw:
+    rule: allow
+    to_port: "{{ item }}"
+    proto: tcp
+    state: enabled
+  with_items:
+    - 8080
+    - 8443
+  tags:
+    - configure_firewall
+    - configure
