@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: vault
+  namespace: argocd
+spec:
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+  project: default
+  sources:
+    - chart: vault
+      repoURL: https://helm.releases.hashicorp.com
+      targetRevision: 0.28.1 # Replace with the Longhorn version you'd like to install or upgrade to
+      helm:
+        values: |
+          ui:
+            enabled: true
+            serviceType: NodePort
+          server:
+            dataStorage:
+              enabled: true
+              size: 3G
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: vault-system
