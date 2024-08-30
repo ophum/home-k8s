@@ -1,0 +1,5 @@
+---
+- name: Install HAProxy
+  ansible.builtin.import_tasks: haproxy.yml
+  tags:
+    - install_haproxy

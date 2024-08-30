@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ingress-nginx
+  namespace: argocd
+spec:
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+  project: default
+  sources:
+    - chart: ingress-nginx
+      repoURL: https://kubernetes.github.io/ingress-nginx
+      targetRevision: 4.11.2 # Replace with the Longhorn version you'd like to install or upgrade to
+      plugin:
+        env:
+          - name: HELM_VALUES
+            value: |
+              controller:
+                service:
+                  type: NodePort
+                  nodePorts:
+                    http: 30080
+                    https: 30443
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: ingress-nginx

@@ -1,0 +1,13 @@
+---
+- name: Set haproxy.cfg
+  ansible.builtin.copy:
+    src: haproxy.cfg
+    dest: /etc/haproxy/haproxy.cfg
+    mode: "0644"
+    owner: root
+    group: root
+
+- name: Reload
+  ansible.builtin.systemd_service:
+    name: haproxy.service
+    state: reloaded
