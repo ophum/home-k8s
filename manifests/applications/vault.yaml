@@ -11,7 +11,7 @@ spec:
   sources:
     - chart: vault
       repoURL: https://helm.releases.hashicorp.com
-      targetRevision: 0.28.1 # Replace with the Longhorn version you'd like to install or upgrade to
+      targetRevision: 0.28.1
       helm:
         values: |
           ui:

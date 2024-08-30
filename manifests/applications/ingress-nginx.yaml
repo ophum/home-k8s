@@ -11,7 +11,7 @@ spec:
   sources:
     - chart: ingress-nginx
       repoURL: https://kubernetes.github.io/ingress-nginx
-      targetRevision: 4.11.2 # Replace with the Longhorn version you'd like to install or upgrade to
+      targetRevision: 4.11.2
       plugin:
         env:
           - name: HELM_VALUES

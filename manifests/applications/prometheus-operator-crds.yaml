@@ -11,7 +11,7 @@ spec:
   sources:
     - chart: prometheus-operator-crds
       repoURL: https://prometheus-community.github.io/helm-charts
-      targetRevision: 14.0.0 # Replace with the Longhorn version you'd like to install or upgrade to
+      targetRevision: 14.0.0
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
