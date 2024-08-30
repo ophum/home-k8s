@@ -1,0 +1,16 @@
+---
+- name: Install kernel
+  hosts: kube_control_plane,kube_node
+  become: true
+  tasks:
+    - name: Install linux-image-generic
+      ansible.builtin.apt:
+        pkg:
+          - linux-image-5.19.0-50-generic
+        update_cache: true
+
+
+    - name: Reboot
+      ansible.builtin.reboot: reboot_timeout=600
+
+

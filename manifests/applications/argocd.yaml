@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd
+  namespace: argocd
+spec:
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+  project: default
+  source:
+    path: manifests/argocd
+    repoURL: https://github.com/ophum/home-k8s.git
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd

@@ -1,0 +1,5 @@
+kube_version: v1.30.4
+
+enable_dual_stack_networks: false
+
+enable_nodelocaldns: false

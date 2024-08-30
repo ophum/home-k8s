@@ -1,0 +1,30 @@
+[all]
+cplane1 ansible_host=192.168.2.201
+cplane2 ansible_host=10.1.0.2
+worker1 ansible_host=192.168.2.202
+worker2 ansible_host=10.1.0.5
+worker3 ansible_host=10.1.0.6
+etcd2 ansible_host=10.1.0.3
+etcd3 ansible_host=10.1.0.4
+
+[kube_control_plane]
+cplane1
+cplane2
+
+[etcd]
+cplane1
+etcd2
+etcd3
+
+[kube_node]
+worker1
+worker2
+worker3
+
+[calico_rr]
+
+[k8s_cluster:children]
+kube_control_plane
+kube_node
+calico_rr
+
