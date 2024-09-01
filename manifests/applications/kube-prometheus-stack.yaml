@@ -28,6 +28,11 @@ spec:
               size: 10Gi
               finalizers:
                 - kubernetes.io/pvc-protection
+            ingress:
+              enabled: true
+              hosts:
+              - grafana.homelab.t-inagaki.net
+
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
