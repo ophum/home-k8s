@@ -18,7 +18,7 @@ spec:
             enabled: false
 
           defaultDashboardTimezone: Asia/Tokyo
-          adminPassword: <path:secret/data/kube-prometheus-stack#adminPassword>
+          adminPassword: <path:homelab/data/kube-prometheus-stack#adminPassword>
           grafana:
             persistence:
               enabled: true
