@@ -8,19 +8,31 @@ spec:
     syncOptions:
       - CreateNamespace=true
   project: default
-  sources:
-    - chart: vault
-      repoURL: https://helm.releases.hashicorp.com
-      targetRevision: 0.28.1
-      helm:
-        values: |
-          ui:
+  source:
+    chart: vault
+    repoURL: https://helm.releases.hashicorp.com
+    targetRevision: 0.28.1
+    helm:
+      values: |
+        ui:
+          enabled: true
+          serviceType: NodePort
+
+        server:
+          ha:
             enabled: true
-            serviceType: NodePort
-          server:
-            dataStorage:
+            raft:
               enabled: true
-              size: 3G
+          
+          ingress:
+            enabled: true
+            ingressClassName: nginx
+            hosts:
+              - host: vault.homelab.t-inagaki.net
+
+          dataStorage:
+            enabled: true
+            size: 3G
   destination:
     server: https://kubernetes.default.svc
-    namespace: vault-system
+    namespace: vault

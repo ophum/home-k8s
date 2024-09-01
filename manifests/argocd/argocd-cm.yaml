@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: argocd-cm
   annotations:
-    avp.kubernetes.io/path: secret/data/argocd-cm
+    avp.kubernetes.io/path: homelab/data/argocd-cm
 data:
   # Kustomize sees the value of dex.config as a single string instead of yaml. It will not merge
   # Dex settings, but instead it will replace the entire configuration with the settings below,
