@@ -8,20 +8,21 @@ spec:
     syncOptions:
       - CreateNamespace=true
   project: default
-  sources:
-    - chart: ingress-nginx
-      repoURL: https://kubernetes.github.io/ingress-nginx
-      targetRevision: 4.11.2
-      plugin:
-        env:
-          - name: HELM_VALUES
-            value: |
-              controller:
-                service:
-                  type: NodePort
-                  nodePorts:
-                    http: 30080
-                    https: 30443
+  source:
+    chart: ingress-nginx
+    repoURL: https://kubernetes.github.io/ingress-nginx
+    targetRevision: 4.11.2
+    helm:
+      releaseName: ingress-nginx
+      values: |
+        controller:
+          service:
+            type: NodePort
+            nodePorts:
+              http: 30080
+              https: 30443
+          extraArgs:
+            enable-ssl-passthrough: true
 
   destination:
     server: https://kubernetes.default.svc

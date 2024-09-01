@@ -8,6 +8,7 @@ resources:
   - cmp-plugin.yaml
   - argocd-vault-plugin-credentials.yaml
   - role-and-role-binding.yaml
+  - argocd-server-ingress.yaml
 
 patches:
   - path: argocd-repo-server.yaml

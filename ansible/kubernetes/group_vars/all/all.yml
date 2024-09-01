@@ -1,1 +1,10 @@
-enable_nodelocaldns: false
+apiserver_loadbalancer_domain_name: kube-apiserver.homelab.t-inagaki.net
+loadbalancer_apiserver:
+  address: 192.168.2.99
+  port: 6443
+
+loadbalancer_apiserver_localhost: false
+
+http_proxy: http://10.1.0.254:3128
+https_proxy: http://10.1.0.254:3128
+no_proxy: "localhost,127.0.0.1,10.0.0.0/8"

@@ -1,0 +1,15 @@
+network:
+  version: 2
+  ethernets:
+    eth0:
+      addresses:
+      - ${eth0_ip_address}/${eth0_prefix}
+      nameservers:
+        addresses:
+        - 8.8.8.8
+      routes:
+      - to: 0.0.0.0/0
+        via: ${default_gateway}
+    eth1:
+      addresses:
+      - ${eth1_ip_address}/${eth1_prefix}
