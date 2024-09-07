@@ -30,3 +30,9 @@ data:
             #    redirectURIs:
             #      - https://argo-workflows.mydomain.com/oauth2/callback
             #    secretEnv: ARGO_WORKFLOWS_SSO_CLIENT_SECRET
+
+    staticPasswords:
+      - email: <static_email>
+        hash: <static_hash>
+        username: "admin"
+        userID: 3336d31f-fea8-49e6-a3c4-7c45f9153d5b
