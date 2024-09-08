@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: postgresql-cluster
+  namespace: argocd
+spec:
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+  project: default
+  source:
+    path: manifests/postgresql-cluster
+    repoURL: https://github.com/ophum/homelab.git
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: postgresql-cluster
