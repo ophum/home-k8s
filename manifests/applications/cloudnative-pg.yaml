@@ -11,7 +11,7 @@ spec:
   source:
     chart: cnpg
     repoURL: https://cloudnative-pg.github.io/charts
-    targetRevision: 4.11.2
+    targetRevision: 0.22.0
     helm:
       releaseName: ingress-nginx
       values: |
