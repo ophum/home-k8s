@@ -2,6 +2,8 @@ apiVersion: postgresql.cnpg.io/v1
 kind: Cluster
 metadata:
   name: postgresql-cluster
+  labels:
+    release: kube-prometheus-stack
 spec:
   instances: 3
 
