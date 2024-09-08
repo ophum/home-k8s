@@ -17,3 +17,16 @@ patches:
     target:
       kind: ConfigMap
       name: argocd-rbac-cm
+  - target:
+      kind: Role
+      name: argocd-server
+    patch: |
+      - op: add
+        path: /rules/-
+        value:
+          apiGroups:
+          - ""
+          resources:
+          - pods/exec
+          verbs:
+          - create
