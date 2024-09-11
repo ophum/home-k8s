@@ -3,8 +3,9 @@ cplane-ryzn-01 ansible_host=10.1.0.2
 etcd-ryzn-01 ansible_host=10.1.0.3 etcd_member_name=etcd-ryzen-01
 etcd-ryzn-02 ansible_host=10.1.0.4 etcd_member_name=etcd-ryzen-02
 etcd-ryzn-03 ansible_host=10.1.0.5 etcd_member_name=etcd-ryzen-03
-worker-ryzn-01 ansible_host=10.1.0.6
 worker-ryzn-02 ansible_host=10.1.0.7
+worker-ryzn-2-01 ansible_host=10.1.0.8
+worker-ryzn-2-02 ansible_host=10.1.0.9
 
 cplane-oplx-01 ansible_host=10.2.0.2
 etcd-oplx-01 ansible_host=10.2.0.3 etcd_member_name=etcd-oplx-01
@@ -23,8 +24,9 @@ etcd-oplx-01
 etcd-oplx-02
 
 [kube_node]
-worker-ryzn-01
 worker-ryzn-02
+worker-ryzn-2-01
+worker-ryzn-2-02
 worker-oplx-01
 
 [calico_rr]

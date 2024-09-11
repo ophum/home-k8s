@@ -1,7 +1,7 @@
 
-resource "lxd_volume" "worker_ryzn_disk1" {
+resource "lxd_volume" "worker_ryzn_2_disk1" {
   count        = 2
-  name         = format("worker-ryzn-%02d-disk1", count.index + 1)
+  name         = format("worker-ryzn-2-%02d-disk1", count.index + 1)
   pool         = "default"
   content_type = "block"
 
@@ -12,9 +12,9 @@ resource "lxd_volume" "worker_ryzn_disk1" {
   remote = "ryzen7-5700x"
 }
 
-resource "lxd_instance" "worker_ryzn" {
+resource "lxd_instance" "worker_ryzn_2" {
   count = 2
-  name  = format("worker-ryzn-%02d", count.index + 1)
+  name  = format("worker-ryzn-2-%02d", count.index + 1)
   image = "ubuntu:22.04"
   type  = "virtual-machine"
 
@@ -22,7 +22,7 @@ resource "lxd_instance" "worker_ryzn" {
     "boot.autostart" = true
     "cloud-init.network-config" = templatefile("network-config.yaml.tmpl", {
       iface_name      = "enp5s0"
-      ip_address      = cidrhost("10.1.0.0/24", 6 + count.index)
+      ip_address      = cidrhost("10.1.0.0/24", 8 + count.index)
       prefix          = 24
       default_gateway = "10.1.0.1"
     })
@@ -31,7 +31,7 @@ resource "lxd_instance" "worker_ryzn" {
 
   limits = {
     cpu    = 4
-    memory = "4GiB"
+    memory = "8GiB"
   }
 
   device {
@@ -57,7 +57,7 @@ resource "lxd_instance" "worker_ryzn" {
     type = "disk"
     properties = {
       pool   = "default"
-      source = lxd_volume.worker_ryzn_disk1[count.index].name
+      source = lxd_volume.worker_ryzn_2_disk1[count.index].name
     }
   }
   remote = "ryzen7-5700x"
