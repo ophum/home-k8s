@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mattermost-operator
+  namespace: argocd
+spec:
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+  project: default
+  source:
+    chart: mattermost-operator
+    repoURL: https://helm.mattermost.com
+    targetRevision: 1.0.2
+    helm:
+      releaseName: mattermost-operator
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: mattermost-operator
