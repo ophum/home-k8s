@@ -8,7 +8,7 @@ patches:
     patch: |
       - op: replace
         path: /spec/pools/0/servers
-        value: 1
+        value: 2
       - op: replace
         path: /spec/pools/0/volumesPerServer
         value: 1
