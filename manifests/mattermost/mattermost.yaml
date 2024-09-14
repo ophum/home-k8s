@@ -10,4 +10,8 @@ spec:
   database:
     external:
       secret: postgres-conenction
+  fileStore:
+    operatorManaged:
+      replicas: 1
+      storageSizes: 1Gi
   version: 9.11.1
