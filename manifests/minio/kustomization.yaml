@@ -1,5 +1,6 @@
 resources:
   - https://github.com/minio/operator/examples/kustomization/base/
+  - ingress.yaml
 
 patches:
   - target:
