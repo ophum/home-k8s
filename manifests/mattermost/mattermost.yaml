@@ -15,4 +15,7 @@ spec:
       url: minio.minio-tenant
       bucket: mattermost
       secret: minio-access-key
+  mattermostEnv:
+    - name: MM_FILESETTINGS_AMAZONS3SSL
+      value: "false"
   version: 9.11.1
