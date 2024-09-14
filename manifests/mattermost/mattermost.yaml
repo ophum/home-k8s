@@ -11,7 +11,8 @@ spec:
     external:
       secret: postgres-conenction
   fileStore:
-    operatorManaged:
-      replicas: 1
-      storageSizes: 1Gi
+    external:
+      url: minio.minio-tenant
+      bucket: mattermost
+      secret: minio-access-key
   version: 9.11.1
