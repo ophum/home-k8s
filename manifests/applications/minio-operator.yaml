@@ -9,11 +9,11 @@ spec:
       - CreateNamespace=true
   project: default
   source:
-    chart: minio-operator
+    chart: operator
     repoURL: https://operator.min.io
     targetRevision: 6.0.3
     helm:
-      releaseName: minio-operator
+      releaseName: operator
 
   destination:
     server: https://kubernetes.default.svc
