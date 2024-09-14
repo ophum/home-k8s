@@ -1,0 +1,13 @@
+apiVersion: installation.mattermost.com/v1beta1
+kind: Mattermost
+metadata:
+  name: mattermost
+spec:
+  size: 100users
+  ingress:
+    enabled: true
+    host: chat.homelab.t-inagaki.net
+  database:
+    external:
+      secret: postgres-conenction
+  version: 9.11.1
