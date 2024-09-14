@@ -12,10 +12,7 @@ spec:
       secret: postgres-conenction
   fileStore:
     external:
-      url: minio.minio-tenant
+      url: minio.minio-tenant.svc.cluster.local
       bucket: mattermost
       secret: minio-access-key
-  mattermostEnv:
-    - name: MM_FILESETTINGS_AMAZONS3SSL
-      value: "false"
   version: 9.11.1
