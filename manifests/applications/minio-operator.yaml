@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     chart: minio-operator
-    repoURL: https://helm.minio.com
+    repoURL: https://operator.min.io
     targetRevision: 6.0.3
     helm:
       releaseName: minio-operator
