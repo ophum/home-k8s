@@ -15,4 +15,7 @@ spec:
       url: minio.minio-tenant.svc.cluster.local
       bucket: mattermost
       secret: minio-access-key
+  mattermostEnv:
+    - name: MM_SERVICESETTINGS_ENABLEINSECUREOUTGOINGCONNECTIONS
+      value: "true"
   version: 9.11.1
