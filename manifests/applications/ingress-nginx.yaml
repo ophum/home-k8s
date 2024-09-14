@@ -23,6 +23,7 @@ spec:
               https: 30443
           extraArgs:
             enable-ssl-passthrough: true
+          allowSnippetAnnotations: true
 
   destination:
     server: https://kubernetes.default.svc
