@@ -17,6 +17,8 @@ spec:
       values: |
         global:
           dnsService: coredns
+        memcached:
+          enabled: false
         deploymentMode: SingleBinary
         loki:
           commonConfig:
