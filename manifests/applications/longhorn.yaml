@@ -20,6 +20,10 @@ spec:
             enabled: true
             host: longhorn.homelab.t-inagaki.net
             ingressClassName: nginx
+          persistence:
+            defaultClassReplicaCount: 2
+          defaultSettings:
+            defaultReplicaCount: 2
           metrics:
             serviceMonitor:
               enabled: true
