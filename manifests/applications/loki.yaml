@@ -17,8 +17,8 @@ spec:
       values: |
         global:
           dnsService: coredns
-        memcached:
-          enabled: false
+        chunksCache:
+          allocatedMemory: 1024
         deploymentMode: SingleBinary
         loki:
           commonConfig:
