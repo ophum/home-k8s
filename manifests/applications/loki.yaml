@@ -45,4 +45,4 @@ spec:
 
   destination:
     server: https://kubernetes.default.svc
-    namespace: loki
+    namespace: monitoring
