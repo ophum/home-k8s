@@ -1,0 +1,19 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: alert-rules
+  namespace: monitoring
+  labels:
+    release: kube-prometheus-stack
+spec:
+  groups:
+    - name: kubernetes
+      rules:
+        - alert: PodStatusNotReady
+          expr: kube_pod_status_ready{condition="false"} == 1
+          for: 5m
+          labels:
+            severity: alert
+          annotations:
+            summary: "{{ $labels.namespace }}/{{ $labels.pod }} NotReady"
+            description: "Pod {{ $labels.namespace }}/{{ $labels.pod }} がNot Readyの状態を継続している"
