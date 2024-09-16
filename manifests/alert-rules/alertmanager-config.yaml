@@ -1,0 +1,17 @@
+apiVersion: monitoring.coreos.com/v1alpha1
+kind: AlertmanagerConfig
+metadata:
+  name: alertmanager-config
+  annotations:
+    avp.kubernetes.io/path: homelab/data/kube-prometheus-stack
+spec:
+  route:
+    groupBy: []
+    groupWait: 30s
+    groupInterval: 5m
+    repeatInterval: 12h
+    receiver: discord-webhook
+  receivers:
+    - name: discord-webhook
+      webhookConfigs:
+        - url: <alertmanager_discord_webhook>
