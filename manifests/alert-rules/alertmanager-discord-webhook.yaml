@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: alertmanager-discord-webhook
+  namespace: monitoring
+  annotations:
+    avp.kubernetes.io/path: homelab/data/kube-prometheus-stack
+stringData:
+  url: <alertmanager_discord_webhook>

@@ -13,5 +13,8 @@ spec:
     receiver: discord-webhook
   receivers:
     - name: discord-webhook
-      discord_configs:
-        - webhook_url: <alertmanager_discord_webhook>
+      discordConfigs:
+        - sendResolved: true
+          apiURL:
+            name: alertmanager-discord-webhook
+            key: url
