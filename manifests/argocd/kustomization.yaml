@@ -18,7 +18,7 @@ patches:
       kind: ConfigMap
       name: argocd-rbac-cm
   - target:
-      kind: Role
+      kind: ClusterRole
       name: argocd-server
     patch: |
       - op: add
