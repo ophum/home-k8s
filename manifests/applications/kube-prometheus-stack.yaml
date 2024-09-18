@@ -33,6 +33,11 @@ spec:
               ingressClassName: nginx
               hosts:
               - grafana.homelab.t-inagaki.net
+          alertmanager:
+            enabled: true
+            alertmanagerSpec:
+              alertmanagerConfiguration:
+                name: alertmanager-config
 
   destination:
     server: https://kubernetes.default.svc
