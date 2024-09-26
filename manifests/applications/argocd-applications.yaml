@@ -11,6 +11,8 @@ spec:
   source:
     path: manifests/applications
     repoURL: https://github.com/ophum/homelab.git
+    directory:
+      recurse: true
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
